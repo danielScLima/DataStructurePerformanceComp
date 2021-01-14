@@ -1,0 +1,3 @@
+[submodule "DSPerfCompGui/submodules/dsPerformanceComp"]
+	path = DSPerfCompGui/submodules/dsPerformanceComp
+	url = https://github.com/danielScLima/dsPerformanceComp.git
