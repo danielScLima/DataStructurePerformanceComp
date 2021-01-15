@@ -30,32 +30,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 #This is the end of default .pro file
 
 
-
-
-
-#win32: LIBS += -L$$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/ -lDataStructureComp
-
-#INCLUDEPATH += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug
-#DEPENDPATH += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug
-
-#PRE_TARGETDEPS += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/libDataStructureComp.a
-
-#win32:!win32-g++: PRE_TARGETDEPS += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/DataStructureComp.lib
-#else:win32-g++: PRE_TARGETDEPS += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/libDataStructureComp.a
-
 LIBS += -Lsubmodules/dsPerformanceComp/DataStructureComp/debug/ -lDataStructureComp
-
-#message( $$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/ )
-
-#win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/ -lDataStructureComp
-# else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/ -lDataStructureComp
-
-#message( $$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/ )
-
- #INCLUDEPATH += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/
- #DEPENDPATH += $$PWD/submodules/dsPerformanceComp/DataStructureComp/debug/
-
- #win32:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/libDataStructureComp.a
- #else:win32:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/submodules/dsPerformanceComp/DataStructureComp/debug/libDataStructureComp.a
-
 
