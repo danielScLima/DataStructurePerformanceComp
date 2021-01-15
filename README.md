@@ -2,6 +2,7 @@ Data Structure Performance Comparator
 ====================
 
 This repository has a project with the implementation of a Data Structure Performance Comparator.
+It was divided in two parts: a gui and a core. This repo is the gui and the core was created as a submodule.
 
 It is written in C++.
 
@@ -17,6 +18,43 @@ you must execute the following command:
 git submodule update --init --recursive
 
 This project uses the gnuplot, to generate graphs. Install this tool in your computer before use this software.
+
+
+Full list of data structure: 
+====================
+
+* [Stack;](#markdown-header)
+* [Queue;](#markdown-header)
+* [Lists;](#markdown-header)
+	* [List;](#markdown-header-emphasis)
+	* [List circular;](#markdown-header-emphasis)
+	* [DoubledLinkedList;](#markdown-header-emphasis)
+	* [DoubledLinkedListCircular;](#markdown-header-emphasis)
+* [TREEs;](#markdown-header)
+	* [Avl tree;](#markdown-header-emphasis)
+	* [Binary Tree;](#markdown-header-emphasis)
+	* [BPlus Tree;](#markdown-header-emphasis)
+	* [BStar Tree;](#markdown-header-emphasis)
+	* [BTree;](#markdown-header-emphasis)	
+	* [Radix Tree;](#markdown-header-emphasis)
+	* [RedBlackTree;](#markdown-header-emphasis)
+	* [Splay Tree;](#markdown-header-emphasis)
+	* [Ternary search tree;](#markdown-header-emphasis)
+	* [Tree 23;](#markdown-header-emphasis)
+* [TRIEs;](#markdown-header)
+	* [PatriciaTreeBinarySameLenKeys;](#markdown-header-emphasis)
+	* [PatriciaTreeStoreBinaryDifferentLenKeys;](#markdown-header-emphasis)
+	* [Trie or Prefix tree;](#markdown-header-emphasis)
+* [Heaps.](#markdown-header)
+	* [Binomial heap;](#markdown-header-emphasis)
+	* [Fibonacci heap;](#markdown-header-emphasis)
+	* [Leftist heap;](#markdown-header-emphasis)
+	* [Max heap;](#markdown-header-emphasis)
+	* [Min heap;](#markdown-header-emphasis)
+	* [MinMax heap;](#markdown-header-emphasis)
+	* [Skew heap;](#markdown-header-emphasis)
+
+
 
 - - -
 
