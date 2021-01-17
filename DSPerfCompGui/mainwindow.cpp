@@ -211,6 +211,7 @@ void MainWindow::buildGui()
     {
         combo->insertItem(index-1, QString::number(pow(10,index),'d',0));
     }
+    combo->setCurrentIndex(3);
     horizontalLayout_9->addWidget(combo);
     horizontalLayout_10->addLayout(horizontalLayout_9);
     verticalLayout_2->addWidget(groupBox_5);
