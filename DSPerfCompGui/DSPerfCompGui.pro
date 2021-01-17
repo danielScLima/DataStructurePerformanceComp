@@ -22,6 +22,24 @@ HEADERS += \
     mainwindow.h \
     mainwindow2.h
 
+CONFIG += debug_and_release
+
+win32 {
+    CONFIG(debug, debug|release) {
+        DESTDIR = $$PWD/debug/
+    } else {
+        DESTDIR = $$PWD/release/
+    }
+}
+
+!win32 {
+    CONFIG(debug, debug|release) {
+        DESTDIR = $$PWD/debug/
+    } else {
+        DESTDIR = $$PWD/release/
+    }
+}
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
