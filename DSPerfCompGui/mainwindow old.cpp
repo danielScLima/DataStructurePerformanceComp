@@ -14,8 +14,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QPushButton>
-#include <QComboBox>
-#include <math.h>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,11 +27,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
 
-}
-
-int MainWindow::getQuantityOfZeros()
-{
-    return combo->currentIndex() + 1;
 }
 
 void MainWindow::triggerEvent(int optionToRun)
@@ -62,8 +56,7 @@ void MainWindow::triggerEvent(int optionToRun)
         SimulationResults simulationResults = compRunner.run
         (
             optionToRun, //0-insert, 1-remove,2search
-            vecOfEnumDataStructureTypeSelected,
-            this->getQuantityOfZeros()
+            vecOfEnumDataStructureTypeSelected
         );
 
         MainWindow2* mw2 = new MainWindow2(this, simulationResults);
@@ -183,7 +176,6 @@ void MainWindow::buildGui()
 
     verticalLayout_2->addWidget(groupBox_2);
 
-    //start of groupBox_3
     groupBox_3 = new QGroupBox(centralwidget);
     horizontalLayout_8 = new QHBoxLayout(groupBox_3);
     horizontalLayout_7 = new QHBoxLayout();
@@ -200,21 +192,6 @@ void MainWindow::buildGui()
 
 
     verticalLayout_2->addWidget(groupBox_3);
-    //end of groupBox_3
-
-    //begin of groupBox_5
-    groupBox_5 = new QGroupBox(centralwidget);//9(7) e 10(8)
-    horizontalLayout_10 = new QHBoxLayout(groupBox_5);
-    horizontalLayout_9 = new QHBoxLayout();
-    combo = new QComboBox(groupBox_5);
-    for(int index=1;index<=5;++index)
-    {
-        combo->insertItem(index-1, QString::number(pow(10,index),'d',0));
-    }
-    horizontalLayout_9->addWidget(combo);
-    horizontalLayout_10->addLayout(horizontalLayout_9);
-    verticalLayout_2->addWidget(groupBox_5);
-    //end of groupBox_5
 
     verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -254,8 +231,6 @@ void MainWindow::configureTexts()
     groupBox_3->setTitle("Analysis of search");
     label_3->setText("Make analysis of search:");
     pushButtonOfSearchTest->setText("Make");
-
-    groupBox_5->setTitle("Quantity of entries:");
 }
 
 void MainWindow::selectAllChanged(bool var)

@@ -11,7 +11,6 @@ class QTreeWidget;
 class QSpacerItem;
 class QLabel;
 class QPushButton;
-class QComboBox;
 
 class QTreeWidgetItem;
 
@@ -31,32 +30,27 @@ private slots:
     void selectAllChanged(bool var);
 
 private:
-    QGroupBox *groupBox = nullptr;
-    QGroupBox *groupBox_2 = nullptr;
-    QGroupBox *groupBox_3 = nullptr;
-    QGroupBox *groupBox_4 = nullptr;
-
-    QGroupBox *groupBox_5 = nullptr;
-    QHBoxLayout *horizontalLayout_10 = nullptr;
-    QHBoxLayout *horizontalLayout_9 = nullptr;
-    QComboBox* combo = nullptr;
 
     QWidget *centralwidget = nullptr;
     QHBoxLayout *horizontalLayout = nullptr;
     QVBoxLayout *verticalLayout = nullptr;
+    QGroupBox *groupBox_4 = nullptr;
     QVBoxLayout *verticalLayout_3 = nullptr;
     QCheckBox *checkBox = nullptr;
     QTreeWidget *treeWidget = nullptr;
     QVBoxLayout *verticalLayout_2 = nullptr;
     QHBoxLayout *horizontalLayout_2 = nullptr;
+    QGroupBox *groupBox = nullptr;
     QHBoxLayout *horizontalLayout_4 = nullptr;
     QHBoxLayout *horizontalLayout_3 = nullptr;
     QLabel *label = nullptr;
     QPushButton *pushButtonOfInsertinTest = nullptr;
+    QGroupBox *groupBox_2 = nullptr;
     QHBoxLayout *horizontalLayout_6 = nullptr;
     QHBoxLayout *horizontalLayout_5 = nullptr;
     QLabel *label_2 = nullptr;
     QPushButton *pushButtonOfRemoveTest = nullptr;
+    QGroupBox *groupBox_3 = nullptr;
     QHBoxLayout *horizontalLayout_8 = nullptr;
     QHBoxLayout *horizontalLayout_7 = nullptr;
     QLabel *label_3 = nullptr;
@@ -70,8 +64,6 @@ private:
     void configureTexts();
 
     void connectEvents();
-
-    int getQuantityOfZeros();
 
     void triggerEvent(int optionToRun);
 };
