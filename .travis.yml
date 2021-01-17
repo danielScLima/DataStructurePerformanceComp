@@ -71,17 +71,21 @@ script:
      - cd DataStructureComp/
      - git submodule update --init --recursive
      - git submodule foreach 'git pull origin master'
-     - qmake -project
-     - qmake DataStructureComp.pro
+     #- qmake -project
+     #- qmake DataStructureComp.pro
      #- make
-     - mingw32-make.exe
+     #- mingw32-make.exe
+     - qmake -qt=qt5
+     - make
      - cd ..
      - cd ..
      - cd ..
-     - qmake -project
-     - qmake DSPerfCompGui.pro
+     #- qmake -project
+     #- qmake DSPerfCompGui.pro
      #- make
-     - mingw32-make.exe
+     #- mingw32-make.exe
+     - qmake -qt=qt5
+     - make
      
 
 
