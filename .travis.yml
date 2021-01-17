@@ -65,23 +65,23 @@ script:
     ############################################################################
      - cd DSPerfCompGui
      - git submodule update --init --recursive
-     - git pull --recurse-submodules
      - git submodule foreach 'git pull origin master'
      - cd submodules
      - cd dsPerformanceComp
      - cd DataStructureComp/
      - git submodule update --init --recursive
-     - git pull --recurse-submodules
      - git submodule foreach 'git pull origin master'
      - qmake -project
      - qmake DataStructureComp.pro
-     - make
+     #- make
+     - mingw32-make.exe
      - cd ..
      - cd ..
      - cd ..
      - qmake -project
      - qmake DSPerfCompGui.pro
-     - make
+     #- make
+     - mingw32-make.exe
      
 
 
