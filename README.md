@@ -17,6 +17,8 @@ you must execute the following command:
 
 git submodule update --init --recursive
 
+After that, go until the submodule created (teh core) and execute the same command. It wil download all of the data structures.
+
 This project uses the gnuplot, to generate graphs. Install this tool in your computer before use this software.
 
 
