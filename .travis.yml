@@ -76,7 +76,8 @@ script:
      #- make
      #- mingw32-make.exe
      - qmake -qt=qt5
-     - make
+     #- make
+     - make -f Makefile.Debug
      - cd ..
      - cd ..
      - cd ..
@@ -86,7 +87,8 @@ script:
      #- mingw32-make.exe
      - qmake -qt=qt5
      - ls submodules/dsPerformanceComp/DataStructureComp/debug/
-     - make
+     #- make
+     - make -f Makefile.Debug
      
 
 
