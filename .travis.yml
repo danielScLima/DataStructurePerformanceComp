@@ -38,6 +38,10 @@ before_install:
     # Combine global build options with OS/compiler-dependent options
     - export CMAKE_OPTIONS=${CMAKE_OPTIONS}" "${ENV_CMAKE_OPTIONS}
     - export CXX_FLAGS=${CXX_FLAGS}" "${ENV_CXX_FLAGS}
+    - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+    - sudo apt-get update -qq
+    - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
+    - sudo apt-get install qt5-default qttools5-dev-tools
 
 install:
     - if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
@@ -59,12 +63,26 @@ script:
     ############################################################################
     # Build main and tests
     ############################################################################
+     - cd DSPerfCompGui
+     - git submodule update --init --recursive
+     - git pull --recurse-submodules
+     - git submodule foreach 'git pull origin master'
+     - cd submodules
+     - cd dsPerformanceComp
      - cd DataStructureComp/
      - git submodule update --init --recursive
      - git pull --recurse-submodules
      - git submodule foreach 'git pull origin master'
-     - make -f MakefileGeneral
-     - ./saida
+     - qmake -project
+     - qmake DataStructureComp.pro
+     - make
+     - cd ..
+     - cd ..
+     - cd ..
+     - qmake -project
+     - qmake DSPerfCompGui.pro
+     - make
+     
 
 
 after_success:
