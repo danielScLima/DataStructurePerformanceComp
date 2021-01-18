@@ -10,6 +10,6 @@ platform: Any CPU
 # Build Configuration
 configuration: Debug
 
-build_script: cd DataStructureComp/; git submodule update --init --recursive; git pull --recurse-submodules; git submodule foreach 'git pull origin master'; make -f MakefileGeneral; ./saida
+build_script: cd DSPerfCompGui; git submodule update --init --recursive; git submodule foreach 'git pull origin master'; cd submodules; cd dsPerformanceComp; cd DataStructureComp/ ; git submodule update --init --recursive; git submodule foreach 'git pull origin master'; qmake -qt=qt5; make -f Makefile.Debug; cd .. ;cd .. ; cd ..; qmake -qt=qt5; ls submodules/dsPerformanceComp/DataStructureComp/debug/; make -f Makefile.Debug
 
 # Omitted the tests, as they are not relevant for the question
