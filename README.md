@@ -1,5 +1,6 @@
 Data Structure Performance Comparator
 ====================
+Build witth Travis: [![Build Status](https://www.travis-ci.com/danielScLima/DataStructurePerformanceComp.svg?branch=master)](https://www.travis-ci.com/danielScLima/DataStructurePerformanceComp)
 
 This repository has a project with the implementation of a Data Structure Performance Comparator.
 It was divided in two parts: a gui and a core. This repo is the gui and the core was created as a submodule.
