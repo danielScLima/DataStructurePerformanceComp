@@ -79,19 +79,39 @@ void MainWindow::triggerEvent(int optionToRun)
     }
 }
 
+void MainWindow::showMessage(QWidget *parent, const QString &title, const QString &message)
+{
+    QMessageBox::information(parent, title, message);
+}
+
 void MainWindow::on_pushButtonOfInsertinTest_clicked()
 {
-    triggerEvent(0); //0-insert, 1-remove,2search
+    if (getCountOfSelectedOptions() == 0)
+    {
+        showMessage(this, "Atenção", "Selecione pelo menos uma quantidade de elementos");
+    }
+    else
+        triggerEvent(0); //0-insert, 1-remove,2search
 }
 
 void MainWindow::on_pushButtonOfRemoveinTest_clicked()
 {
-    triggerEvent(1); //0-insert, 1-remove,2search
+    if (getCountOfSelectedOptions() == 0)
+    {
+        showMessage(this, "Atenção", "Selecione pelo menos uma quantidade de elementos");
+    }
+    else
+        triggerEvent(1); //0-insert, 1-remove,2search
 }
 
 void MainWindow::on_pushButtonOfSearchinTest_clicked()
 {
-    triggerEvent(2); //0-insert, 1-remove,2search
+    if (getCountOfSelectedOptions() == 0)
+    {
+        showMessage(this, "Atenção", "Selecione pelo menos uma quantidade de elementos");
+    }
+    else
+        triggerEvent(2); //0-insert, 1-remove,2search
 }
 
 void MainWindow::selectOrUnselect(QTreeWidgetItem *widgetitem, int v)
@@ -127,6 +147,20 @@ std::vector<int> MainWindow::getVectorOfDefaultOptions()
 {
     std::vector<int> options = {100000, 150000, 200000, 250000};
     return options;
+}
+
+int MainWindow::getCountOfSelectedOptions()
+{
+    int count = 0;
+    if (checkboxTmp1->isChecked())
+        count++;
+    if (checkboxTmp2->isChecked())
+        count++;
+    if (checkboxTmp3->isChecked())
+        count++;
+    if (checkboxTmp4->isChecked())
+        count++;
+    return count;
 }
 
 void MainWindow::buildGui()

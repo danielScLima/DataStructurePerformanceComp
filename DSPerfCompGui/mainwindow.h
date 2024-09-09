@@ -26,6 +26,7 @@ public:
 
     std::vector<int> getVectorOfDefaultOptions();
     std::vector<int> getVectorOfSelectedOptions();
+    int getCountOfSelectedOptions();
 private slots:
     void on_pushButtonOfInsertinTest_clicked();
     void on_pushButtonOfRemoveinTest_clicked();
@@ -82,5 +83,7 @@ private:
     int getQuantityOfZeros();
 
     void triggerEvent(int optionToRun);
+
+    void showMessage(QWidget *parent, const QString &title, const QString &message);
 };
 #endif // MAINWINDOW_H
