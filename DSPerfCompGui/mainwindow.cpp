@@ -63,7 +63,7 @@ void MainWindow::triggerEvent(int optionToRun)
         (
             optionToRun, //0-insert, 1-remove,2search
             vecOfEnumDataStructureTypeSelected,
-            this->getQuantityOfZeros()
+            {100000, 150000, 200000, 250000}
         );
 
         MainWindow2* mw2 = new MainWindow2(this, simulationResults);
