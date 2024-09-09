@@ -64,7 +64,7 @@ void MainWindow::triggerEvent(int optionToRun)
         (
             optionToRun, //0-insert, 1-remove,2search
             vecOfEnumDataStructureTypeSelected,
-            {100000, 150000, 200000, 250000}
+            getVectorOfSelectedOptions()
         );
 
         MainWindow2* mw2 = new MainWindow2(this, simulationResults);
@@ -105,6 +105,28 @@ void MainWindow::selectOrUnselect(QTreeWidgetItem *widgetitem, int v)
         else
             widgetitem->child(index)->setCheckState(0, Qt::CheckState::Unchecked);
     }
+}
+
+std::vector<int> MainWindow::getVectorOfSelectedOptions()
+{
+    std::vector<int> options = {};
+
+    if (checkboxTmp1->isChecked())
+        options.push_back(spinBox1->value());
+    if (checkboxTmp2->isChecked())
+        options.push_back(spinBox2->value());
+    if (checkboxTmp3->isChecked())
+        options.push_back(spinBox3->value());
+    if (checkboxTmp4->isChecked())
+        options.push_back(spinBox4->value());
+
+    return options;
+}
+
+std::vector<int> MainWindow::getVectorOfDefaultOptions()
+{
+    std::vector<int> options = {100000, 150000, 200000, 250000};
+    return options;
 }
 
 void MainWindow::buildGui()
@@ -207,9 +229,62 @@ void MainWindow::buildGui()
     groupBox_5 = new QGroupBox(centralwidget);//9(7) e 10(8)
 
     newVertLQuantEntr = new QVBoxLayout();
-    std::vector<int> options = {100000, 150000, 200000, 250000};
+    std::vector<int> options = getVectorOfDefaultOptions();
 
-    for (int option: options)
+    //inserindo opção 1
+    QHBoxLayout* tmp1 = new QHBoxLayout();
+    checkboxTmp1 = new QCheckBox("Enable", groupBox_5);
+    tmp1->addWidget(checkboxTmp1);
+    // Criando um QSpinBox
+    spinBox1 = new QSpinBox(groupBox_5);
+    // Definindo o valor mínimo e máximo para o QSpinBox
+    spinBox1->setMinimum(10000);
+    spinBox1->setMaximum(1000000);
+    spinBox1->setValue(options[0]);
+    tmp1->addWidget(spinBox1);
+    newVertLQuantEntr->addLayout(tmp1);
+
+    //inserindo opção 2
+    QHBoxLayout* tmp2 = new QHBoxLayout();
+    checkboxTmp2 = new QCheckBox("Enable", groupBox_5);
+    tmp2->addWidget(checkboxTmp2);
+    // Criando um QSpinBox
+    spinBox2 = new QSpinBox(groupBox_5);
+    // Definindo o valor mínimo e máximo para o QSpinBox
+    spinBox2->setMinimum(10000);
+    spinBox2->setMaximum(1000000);
+    spinBox2->setValue(options[1]);
+    tmp2->addWidget(spinBox2);
+    newVertLQuantEntr->addLayout(tmp2);
+
+    //inserindo opção 3
+    QHBoxLayout* tmp3 = new QHBoxLayout();
+    checkboxTmp3 = new QCheckBox("Enable", groupBox_5);
+    tmp3->addWidget(checkboxTmp3);
+    // Criando um QSpinBox
+    spinBox3 = new QSpinBox(groupBox_5);
+    // Definindo o valor mínimo e máximo para o QSpinBox
+    spinBox3->setMinimum(10000);
+    spinBox3->setMaximum(1000000);
+    spinBox3->setValue(options[2]);
+    tmp3->addWidget(spinBox3);
+    newVertLQuantEntr->addLayout(tmp3);
+
+    //inserindo opção 4
+    QHBoxLayout* tmp4 = new QHBoxLayout();
+    checkboxTmp4 = new QCheckBox("Enable", groupBox_5);
+    tmp4->addWidget(checkboxTmp4);
+    // Criando um QSpinBox
+    spinBox4 = new QSpinBox(groupBox_5);
+    // Definindo o valor mínimo e máximo para o QSpinBox
+    spinBox4->setMinimum(10000);
+    spinBox4->setMaximum(1000000);
+    spinBox4->setValue(options[3]);
+    tmp4->addWidget(spinBox4);
+    newVertLQuantEntr->addLayout(tmp4);
+
+
+    /*for (int option: options)
     {
         QHBoxLayout* tmp = new QHBoxLayout();
 
@@ -225,7 +300,7 @@ void MainWindow::buildGui()
         tmp->addWidget(spinBox);
 
         newVertLQuantEntr->addLayout(tmp);
-    }
+    }*/
 
     groupBox_5->setLayout(newVertLQuantEntr);
 

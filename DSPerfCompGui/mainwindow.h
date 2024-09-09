@@ -12,6 +12,7 @@ class QSpacerItem;
 class QLabel;
 class QPushButton;
 class QComboBox;
+class QSpinBox;
 
 class QTreeWidgetItem;
 
@@ -23,6 +24,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    std::vector<int> getVectorOfDefaultOptions();
+    std::vector<int> getVectorOfSelectedOptions();
 private slots:
     void on_pushButtonOfInsertinTest_clicked();
     void on_pushButtonOfRemoveinTest_clicked();
@@ -42,6 +45,9 @@ private:
     QComboBox* combo = nullptr;
 
     QVBoxLayout *newVertLQuantEntr = nullptr;
+
+    QCheckBox *checkboxTmp1,*checkboxTmp2,*checkboxTmp3,*checkboxTmp4 = nullptr;
+    QSpinBox *spinBox1,*spinBox2,*spinBox3,*spinBox4 = nullptr;
 
     QWidget *centralwidget = nullptr;
     QHBoxLayout *horizontalLayout = nullptr;
