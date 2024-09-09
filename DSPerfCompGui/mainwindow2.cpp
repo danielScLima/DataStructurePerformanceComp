@@ -197,20 +197,20 @@ void MainWindow2::updateImage()
 {
     QDir::setCurrent(QCoreApplication::applicationFilePath());
 
-    std::string message = "set terminal png font arial 14 size 800,600;";
-    message += "set output 'file.png';";
+    std::string message = "set terminal png font arial 14 size 800,600;\n";
+    message += "set output 'file.png';\n";
 
     if (checkBoxXAxis->isChecked())
     {
-        message += "set logscale x;";
+        message += "set logscale x;\n";
     }
     if (checkBoxYAxys->isChecked())
     {
-        message += "set logscale y;";
+        message += "set logscale y;\n";
     }
 
-    message += "set xlabel 'Quantity of elements in operation';";
-    message += "set ylabel 'Time spent in miliseconds';";
+    message += "set xlabel 'Quantity of elements in operation';\n";
+    message += "set ylabel 'Time spent in milliseconds';\n";
 
 
     std::string title = "Results analyser to ";
@@ -227,7 +227,7 @@ void MainWindow2::updateImage()
     {
         title += "SEARCH";
     }
-    message += "set title 'Comparisson of "+title+" to DATA STRUCTURES';";
+    message += "set title 'Comparisson of "+title+" to DATA STRUCTURES';\n";
 
     std::vector<EnumDataStructureType> vecOfEnumDataStructureTypeSelected;
     for (auto item: simulationResults.vectorOfResultsToType)
@@ -243,7 +243,7 @@ void MainWindow2::updateImage()
                   " title '"+vecOfEnumDataStructureTypeSelected.at(index).getValue()+"' with linespoints";
 
         if (index == vecOfEnumDataStructureTypeSelected.size()-1)
-            message += ";";
+            message += ";\n";
         else if (index < vecOfEnumDataStructureTypeSelected.size()-1)
             message += ", ";
     }

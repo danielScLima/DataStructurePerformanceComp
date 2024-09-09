@@ -207,9 +207,14 @@ void MainWindow::buildGui()
     horizontalLayout_10 = new QHBoxLayout(groupBox_5);
     horizontalLayout_9 = new QHBoxLayout();
     combo = new QComboBox(groupBox_5);
-    for(int index=1;index<=5;++index)
+    std::vector<int> options = {0, 100000, 150000, 200000, 250000};
+    for(int index=1;index<options.size();++index)
     {
-        combo->insertItem(index-1, QString::number(pow(10,index),'d',0));
+        //combo->insertItem(index-1, QString::number(pow(10,index),'d',0));
+        combo->insertItem(
+            index-1,
+            QString::number(options[index])
+        );
     }
     combo->setCurrentIndex(3);
     horizontalLayout_9->addWidget(combo);
