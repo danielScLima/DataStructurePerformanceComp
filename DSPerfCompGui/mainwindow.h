@@ -41,6 +41,8 @@ private:
     QHBoxLayout *horizontalLayout_9 = nullptr;
     QComboBox* combo = nullptr;
 
+    QVBoxLayout *newVertLQuantEntr = nullptr;
+
     QWidget *centralwidget = nullptr;
     QHBoxLayout *horizontalLayout = nullptr;
     QVBoxLayout *verticalLayout = nullptr;

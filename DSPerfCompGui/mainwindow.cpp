@@ -16,6 +16,7 @@
 #include <QPushButton>
 #include <QComboBox>
 #include <math.h>
+#include <QSpinBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -204,7 +205,31 @@ void MainWindow::buildGui()
 
     //begin of groupBox_5
     groupBox_5 = new QGroupBox(centralwidget);//9(7) e 10(8)
-    horizontalLayout_10 = new QHBoxLayout(groupBox_5);
+
+    newVertLQuantEntr = new QVBoxLayout();
+    std::vector<int> options = {100000, 150000, 200000, 250000};
+
+    for (int option: options)
+    {
+        QHBoxLayout* tmp = new QHBoxLayout();
+
+        QCheckBox *checkboxTmp = new QCheckBox("Enable", groupBox_5);
+        tmp->addWidget(checkboxTmp);
+
+        // Criando um QSpinBox
+        QSpinBox *spinBox = new QSpinBox(groupBox_5);
+
+        // Definindo o valor mínimo e máximo para o QSpinBox
+        spinBox->setMinimum(10000);
+        spinBox->setMaximum(1000000);
+        tmp->addWidget(spinBox);
+
+        newVertLQuantEntr->addLayout(tmp);
+    }
+
+    groupBox_5->setLayout(newVertLQuantEntr);
+
+    /*horizontalLayout_10 = new QHBoxLayout(groupBox_5);
     horizontalLayout_9 = new QHBoxLayout();
     combo = new QComboBox(groupBox_5);
     std::vector<int> options = {0, 100000, 150000, 200000, 250000};
@@ -218,7 +243,7 @@ void MainWindow::buildGui()
     }
     combo->setCurrentIndex(3);
     horizontalLayout_9->addWidget(combo);
-    horizontalLayout_10->addLayout(horizontalLayout_9);
+    horizontalLayout_10->addLayout(horizontalLayout_9);*/
     verticalLayout_2->addWidget(groupBox_5);
     //end of groupBox_5
 
